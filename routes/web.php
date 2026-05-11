@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController ;
 use App\Http\Controllers\PegawaiController ;
 use App\Http\Controllers\BlogController ;
+use App\Http\Controllers\PegawaiDBController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,20 +20,20 @@ Route::get('biodata', function () {
 });
 
 Route::get('p1', function () {
-	return view('intro');
+	return view('pertemuan1');
 });
 
 Route::get('p2', function () {
-	return view('news');
+	return view('pertemuan2');
 });
 
 
 Route::get('p3', function () {
-	return view('responsive');
+	return view('pertemuan3');
 });
 
 Route::get('p4', function () {
-	return view('5026241101');
+	return view('pertemuan4');
 });
 
 Route::get('p5', function () {
@@ -50,7 +51,12 @@ Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 Route::get('/formulir', [PegawaiController::class, 'formulir']);
 Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
 
+
+
 // route blog
 Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
 Route::get('/blog/kontak', [BlogController::class, 'kontak']);
+
+// MySQL
+Route::get('/pegawai/',[PegawaiDBController::class, 'index']);
