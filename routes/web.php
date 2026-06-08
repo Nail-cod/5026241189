@@ -5,6 +5,7 @@ use App\Http\Controllers\DosenController ;
 use App\Http\Controllers\PegawaiController ;
 use App\Http\Controllers\BlogController ;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\keranjangController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -67,3 +68,9 @@ Route::get('/blog/kontak', [BlogController::class, 'kontak']);
 
 // MySQL
 Route::get('/pegawai/',[PegawaiDBController::class, 'index']);
+
+//crud tabel keranjangbelanja
+Route::get('/keranjangbelanja', [keranjangController::class, 'index_keranjang']);
+Route::get('/keranjangbeli/{id}', [keranjangController::class, 'beli']);
+Route::post('/keranjangstore', [keranjangController::class, 'storeKeranjang']);
+Route::get('/keranjangbatal/{id}', [keranjangController::class, 'batal']);
