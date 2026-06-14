@@ -6,6 +6,7 @@ use App\Http\Controllers\PegawaiController ;
 use App\Http\Controllers\BlogController ;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\keranjangController;
+use App\Http\Controllers\televisiController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -74,3 +75,12 @@ Route::get('/keranjangbelanja', [keranjangController::class, 'index_keranjang'])
 Route::get('/keranjangbeli/{id}', [keranjangController::class, 'beli']);
 Route::post('/keranjangstore', [keranjangController::class, 'storeKeranjang']);
 Route::get('/keranjangbatal/{id}', [keranjangController::class, 'batal']);
+
+//crud tabel televisi
+Route::get('/televisi', [televisiController::class, 'index_televisi']);
+Route::get('/televisitambah', [televisiController::class, 'tambah']);
+Route::post('/televisistore', [televisiController::class, 'store']);
+Route::get('/televisiedit/{id}', [televisiController::class, 'edit']);
+Route::post('/televisiupdate', [televisiController::class, 'update']);
+Route::get('/televisihapus/{id}', [televisiController::class, 'hapus']);
+Route::get('/televisicari', [televisiController::class, 'cari']);
