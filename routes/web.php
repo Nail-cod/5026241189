@@ -9,6 +9,7 @@ use App\Http\Controllers\keranjangController;
 use App\Http\Controllers\televisiController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\easController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -63,7 +64,6 @@ Route::post('/pegawaiupdate',[PegawaiDBController::class, 'update']);
 Route::get('/pegawaihapus/{id}',[PegawaiDBController::class, 'hapus']);
 Route::get('/pegawaicari', [PegawaiDBController::class, 'cari']);
 
-
 // route blog
 Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
@@ -102,3 +102,7 @@ Route::post('/nilaikuliah', [NilaiController::class, 'store'])->name('nilaikulia
 Route::get('/nilaikuliah/{id}/edit', [NilaiController::class, 'edit'])->name('nilaikuliah.edit');
 Route::put('/nilaikuliah/{id}', [NilaiController::class, 'update'])->name('nilaikuliah.update');
 Route::delete('/nilaikuliah/{id}', [NilaiController::class, 'destroy'])->name('nilaikuliah.destroy');
+
+// crud tabel stok_barang
+Route::get('/eas', [easController::class, 'index']);
+Route::get('/eas/tambah', [easController::class, 'create']);

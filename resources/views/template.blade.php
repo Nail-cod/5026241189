@@ -27,7 +27,7 @@
                         <a class="nav-link" href="/siswa">Siswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/televisi">Televisi</a>
+                        <a class="nav-link" href="/televisi">Pra-EAS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/keranjangbelanja">Keranjang</a>
